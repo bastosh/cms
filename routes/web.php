@@ -13,6 +13,7 @@
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/{any}', 'AdminController@index')->where('any', '.*');
 
 Route::get('/', 'PostController@index');
 Route::get('/posts/{post}', 'PostController@show');

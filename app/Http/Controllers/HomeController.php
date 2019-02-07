@@ -24,11 +24,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 		if ($request->user()->hasRole('user')) {
-			return redirect('/');
+			return view('home');
 		}
 
 		if ($request->user()->hasRole('admin')){
-			return view('home');
+			return redirect('/admin/dashboard');
 		}
     }
 }
